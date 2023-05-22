@@ -17,17 +17,20 @@ class PagesController < ApplicationController
   end
 
   def game
-    @letters = params[:letters].split(" ")
+    require "json"
+    require "open-uri"
     @answer = params[:word_answer]
+    @letters = params[:letters].split(" ")
+    url = "https://wagon-dictionary.herokuapp.com/#{@answer}"
     @array = @answer.split("")
-    @hello = "nop"
+    serialized_dictionary = URI.open(url).read
+    @test = JSON.parse(serialized_dictionary)
 
-    @array.each do |letter|
-      if @letters.include?(letter)
-      @hello = "oi"
-      else
-      @hello = "nop"
-      end
+    if (@letters & @array).sort == @array.sort && @test["found"]
+      @valid_answer = true
+      session[:pontos] += 1
+    else
+      @valid_answer = false
     end
   end
 end

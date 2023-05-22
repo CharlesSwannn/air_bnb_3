@@ -1,8 +1,11 @@
 <div class="container">
   <%= @letters %>
-
+<hr>
   <%= @answer %>
-
-
-  <%= @hello %>
+<hr>
+  <%= @valid_answer %>
+<hr>
+  <h1>Your points</h1><%= session[:pontos] %>
+<hr>
+<%= link_to  "Play again ⛳️ 🔂", word_path %>
 </div>
