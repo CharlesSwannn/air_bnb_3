@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   get 'ask', to: 'pages#ask'
   get 'answer', to: 'pages#answer'
+  get 'word', to: "pages#word"
+  get 'word_answer', to: "pages#word_answer"
 end
