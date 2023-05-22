@@ -1,0 +1,15 @@
+<div class="container" style="display:flex;>
+  <div class="letters">
+    <% @letters.each do |letter| %>
+      <div class="btn-success" style="margin:12px; padding:12px;"><h1><%= letter %></h1></div>
+    <% end %>
+  </div>
+
+  <div class="form">
+    <form action="game" method="get" data-turbo="false">
+      <input type="text" name="word_answer">
+      <input type="submit">
+      <input id="letters" name="letters" value="<% @letters.each do |l| %>  <%= l %> <% end %>" type="hidden">
+    </form>
+  </div>
+</div>

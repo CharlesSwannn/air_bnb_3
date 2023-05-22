@@ -15,4 +15,19 @@ class PagesController < ApplicationController
   def word
     @letters = ('a'..'z').to_a.sample(10)
   end
+
+  def game
+    @letters = params[:letters].split(" ")
+    @answer = params[:word_answer]
+    @array = @answer.split("")
+    @hello = "nop"
+
+    @array.each do |letter|
+      if @letters.include?(letter)
+      @hello = "oi"
+      else
+      @hello = "nop"
+      end
+    end
+  end
 end
