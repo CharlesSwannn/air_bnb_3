@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'restaurants/index'
+  get 'restaurants/show'
+  get 'restaurants/new'
+  get 'restaurants/create'
+  get 'restaurants/edit'
+  get 'restaurants/update'
+  get 'restaurants/destroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -14,4 +21,5 @@ Rails.application.routes.draw do
   get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
   patch 'tasks/:id', to: 'tasks#update'
   delete 'tasks/:id', to: 'tasks#destroy'
+  resources :restaurants
 end
