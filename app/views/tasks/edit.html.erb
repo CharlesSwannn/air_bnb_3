@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Edit this task</h1>
+  <%= form_with model: @task do |f| %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+    <%= f.label :details, "Details" %>
+    <%= f.text_area :details %>
+    <%= f.check_box :completed %>
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Create a task</h1>
+  <form action="tasks" method="post">
+    <input type="text" name="title">
+    <input type="text" name="details">
+    <input type="checkbox" name="completed">
+    <input type="submit">
+  </form>
+
+  <%= form_with model: @task do |f| %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+    <%= f.label :details, "Details" %>
+    <%= f.text_area :details %>
+    <%= f.check_box :completed %>
+    <%= f.submit %>
+  <% end %>
+</div>
